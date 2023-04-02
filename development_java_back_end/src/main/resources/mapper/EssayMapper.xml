@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.wddxhz.mapper.EssayMapper">
+    <insert id="addEssay">
+        insert into essay values
+                              (null,#{title},#{username},#{userId},#{contentHTML},#{content},#{img},1)
+    </insert>
+    <update id="updataEssay">
+        update essay set
+                         title=#{title},
+                         img=#{img},
+                         userId=#{userId},
+                         content=#{content},
+                         contentHTML=#{contentHTML}
+        where id=#{id}
+    </update>
+    <delete id="delEssayById">
+        delete from essay where id=#{id}
+    </delete>
+    <select id="getEssayList" resultType="cn.wddxhz.model.Essay">
+        select * from essay where isDel=1
+    </select>
+    <select id="getEssayListByUserId" resultType="cn.wddxhz.model.Essay">
+        select * from essay where userId=#{userId}
+    </select>
+</mapper>

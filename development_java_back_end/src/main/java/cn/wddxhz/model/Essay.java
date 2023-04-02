@@ -14,6 +14,4 @@ public class Essay {
     private String content;
     private String img;
     private Integer isDel;
-
-
 }

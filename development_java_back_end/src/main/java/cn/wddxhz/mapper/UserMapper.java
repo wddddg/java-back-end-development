@@ -11,7 +11,12 @@ public interface UserMapper {
 
     List<User> getUserList();
 
-    List<User> getUserById(Integer id);
+    User getUserById(Integer id);
 
-    List<User> login(String username, String password);
+    User login(String username, String password);
+
+    Integer register(String username, String password);
+    Integer updatePassword(String password,Integer userId);
+
+    Integer uploadsAvatar(String icon, Integer id);
 }

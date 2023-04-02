@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 2600858
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.wddxhz.model
+server:
+  port: 8082
